@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/47273df362.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="./CSS/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+
+<body class=" bg-slate-950">
+
+    <!-- Loader -->
+    <div class="z-50 fixed top-0 bottom-0 left-0 right-0 flex justify-center items-center hidden" id="Loading">
+        <span class="loader"></span>
+    </div>
+
+    <!-- NavBar -->
+    <div class=" z-50 navbar fixed left-0 top-0 bottom-0 flex flex-column justify-center ">
+
+
+        <div class=" flex flex-col justify-between nav-left">
+            <div class="flex flex-col justify-between align-middle text-white p-7 nav-list">
+                <a href="#" class="mb-5 relative cursor-pointer top-[300px]" id="search-btn">Search</a>
+                <a href="#" class="mb-5 relative cursor-pointer top-[300px]" id="category-btn">Categories</a>
+                <a href="#" class="mb-5 relative cursor-pointer top-[300px] " id="area-btn">Area</a>
+                <a href="#" class="mb-5 relative cursor-pointer top-[300px]" id="ingredients-btn">Ingredients</a>
+                <a href="#" class="mb-5 relative cursor-pointer top-[300px]" id="contact-us-btn">Contact Us</a>
+            </div>
+
+
+            <div class="p-7">
+                <div>
+                    <i class="fa-brands fa-facebook text-white"></i>
+                    <i class="fa-brands fa-twitter text-white"></i>
+                    <i class="fa-solid fa-globe text-white"></i>
+                </div>
+                <p class="text-white text-base">Copyright Â© 2019 All Rights <br> Reserved.</p>
+            </div>
+        </div>
+
+        <div
+            class="nav-closer flex flex-col justify-between items-center bg-white absolute left-full top-0 bottom-0 p-3  animate__animated animate__bounceInRight">
+            <div class="logo w-[50px]">
+                <img src="./../Images/logo.png" alt="Logo" class="w-full">
+            </div>
+            <i class="fa-solid fa-bars text-3xl close-nav-btn"></i>
+            <div class="flex flex-col">
+                <i class="fa-solid fa-globe mb-5"></i>
+                <i class="fa-solid fa-share-nodes mb-5"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page -->
+    <div class="z-10 container m-auto grid grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16  gap-8 "
+        id="homePage">
+    </div>
+
+    <!-- Search Page -->
+    <div class="search-page bg-slate-950 fixed top-0 bottom-0 left-0 right-0 z-40  items-center overflow-auto hidden">
+        <div class=" flex flex-col w-full lg:w-1/2 lg:mt-4 lg:flex-row ps-20 mt-8 m-auto">
+            <input type="text" placeholder="Search By Name"
+                class="p-2 rounded border border-gray-500 bg-black text-white focus:outline-none focus:ring-2 focus:ring-blue-500 me-5 w-full"
+                id="search-name">
+            <input type="text" placeholder="Search By First Letter" maxlength="1"
+                class="p-2 rounded border border-gray-500 bg-black text-white focus:outline-none focus:ring-2 focus:ring-blue-500 me-5 w-full"
+                id="search-letter">
+        </div>
+
+
+        <div class="bg-slate-950 container m-auto grid grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16 mt-10 gap-8 "
+            id="searchResult">
+
+        </div>
+    </div>
+
+
+    <!-- Meal Details Page -->
+    <div class="meal-details z-40 bg-slate-950 text-white fixed top-0 bottom-0 left-0 right-0 overflow-auto hidden">
+    </div>
+
+
+    <!-- Area Page -->
+    <div class="z-30 bg-slate-950 absolute top-0 left-0 right-0 hidden overflow-auto" id="area-page">
+        <i class="fa-solid fa-xmark absolute top-10 right-10 text-[30px] text-white" id="close-area-page"></i>
+        <div class="area-card container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        </div>
+    </div>
+
+    <!-- Meals By Area Page -->
+    <div class="overflow-auto z-40 container m-auto grid grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16  gap-8 absolute top-0 right-0 left-0 hidden"
+        id="mealsofareaa">
+    </div>
+
+
+    <!-- Ingredients Page -->
+    <div class="z-30 bg-slate-950 absolute top-0 left-0 right-0 hidden overflow-auto" id="ingredients-page">
+        <i class="fa-solid fa-xmark absolute top-10 right-10 text-[30px] text-white" id="close-ingredients-page"></i>
+        <div class="ingredients-card container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-16">
+        </div>
+    </div>
+
+    <!-- Meals By Ingredient Page -->
+    <div class="overflow-auto z-40 container m-auto grid grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16  gap-8 absolute top-0 right-0 left-0 hidden"
+        id="mealsofingggg">
+    </div>
+
+
+
+    <!-- Form -->
+    <div class="bg-slate-950 flex flex-col items-center justify-center min-h-screen fixed top-0 bottom-0 left-0 right-0 hidden" id="formPage">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex items-center justify-center p-24">
+            <div>
+                <input type="text" placeholder="Enter Your Name" class="w-full p-2 mb-4 text-black rounded-md" id="Name">
+                <input type="tel" placeholder="Enter Your Phone" class="w-full p-2 mb-4 text-black rounded-md" id="phoneNumber">
+                <input type="password" placeholder="Enter Your Password" class="w-full p-2 mb-4 text-black rounded-md" id="Password">
+            </div>
+            <div>
+                <input type="email" placeholder="Enter Your Email" class="w-full p-2 mb-4 text-black rounded-md" id="Email">
+                <input type="number" placeholder="Enter Your Age" class="w-full p-2 mb-4 text-black rounded-md" id="Age">
+                <input type="password" placeholder="Repassword" class="w-full p-2 mb-4 text-black rounded-md" id="Rematch-Pass">
+            </div>
+        </div>
+        <div class="bg-red-300 px-4 rounded hidden" id="errorMessage">     
+            <p class="text-black errmsg"></p>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="px-4 py-2 mt-4 text-red-700 border-red-700 border-solid border-[1px] rounded-md bg-transparent" id="sub-btn">Submit</button>
+        </div>
+
+    </div>
+
+
+    <!-- category page -->
+    <div class="absolute top-0 left-0 right-0 z-30 bg-slate-950 p-10 hidden overflow-auto" id="categoryPage">
+        <i class="fa-solid fa-xmark absolute top-10 right-10 text-[30px] text-white" id="close-category-page"></i>
+       
+        <div class="cat-card container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-16 gap-8">
+           
+        </div>
+           
+    </div>
+
+
+    <!-- Meals By Category Page -->
+    <div class="overflow-auto z-40 container m-auto grid grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16  gap-8 absolute top-0 right-0 left-0 hidden"
+        id="mealsofcaaat">
+    </div>
+    
+    <!-- <div class="z-10 container m-auto grid hidden grid-cols-1 ps-24 pe-5 pt-5 md:grid-cols-2  md:ps-28 md:pe-8 md:pt-8   lg:grid-cols-4  lg:ps-28 lg:pe-16 lg:pt-16  gap-8 absolute top-0  right-0 left-0"
+        id="specificCatMEals">
+    </div> -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>
